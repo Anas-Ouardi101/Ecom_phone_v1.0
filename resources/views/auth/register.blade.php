@@ -101,7 +101,7 @@
                     @csrf
                     <div class="bg-light rounded p-4 p-sm-5 my-4 mx-3">
                         <div class="d-flex align-items-center justify-content-between mb-3">
-                            <a href="{{route("register")}}" class="">
+                            <a href="{{url("/")}}" class="">
                                 <h3 class="text-primary"><i class="fa fa-hashtag me-2"></i>PhoneX</h3>
                             </a>
                             <h3>Sign Up</h3>
@@ -123,11 +123,11 @@
                             <label for="floatingText">Username</label>
                         </div>
                         <div class="form-floating mb-3">
-                            <input type="email" class="form-control @error('name') is-invalid @enderror" id="floatingInput" name="email" value="{{ old('email') }}" required autocomplete="email"   placeholder="E-mail" >
+                            <input type="email" class="form-control @error('email') is-invalid @enderror" id="floatingInput" name="email" value="{{ old('email') }}" required autocomplete="email"   placeholder="E-mail" >
                             <label for="floatingInput">Email address</label>
                         </div>
                         <div class="form-floating mb-4">
-                            <input type="password" name="password" required class="form-control @error('password') is-invalid @enderror" id="floatingPassword" placeholder="Password" autocomplete="new-password">
+                            <input type="password" name="password" required class="form-control" id="floatingPassword" placeholder="Password" autocomplete="new-password">
                             <label for="floatingPassword">Password</label>
 
                         </div>
