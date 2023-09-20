@@ -30,6 +30,9 @@ Route::controller(Admin::class)
     ->middleware(["auth","user-role:admin"])
     ->group(function () {
         Route::get("/dashbord","index")->name("index");
+        Route::get("/myProfile","profile")->name("profile");
+        Route::get("/myProfile/edite","edite")->name("profile.edite");
+        Route::post("/myProfile","store")->name("profile.store");
             
     });
 //=========================== END Admin dashboards ROUTE ============================================//
@@ -42,6 +45,8 @@ Route::controller(Client::class)
     ->middleware(["auth","user-role:client,admin"])
     ->group(function () {
         Route::get("/dashbord","index")->name("index");
+        Route::get("/myProfile","profile")->name("profile");
+
             
     });
 //=========================== END Client dashboards ROUTE ============================================//

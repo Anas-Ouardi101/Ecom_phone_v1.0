@@ -10,4 +10,8 @@ class ClientController extends Controller
     public function index(){
         return view("Client.dashboard");
     }
+
+    public function profile(){
+        return view('user-profile.user-profile');
+    }
 }

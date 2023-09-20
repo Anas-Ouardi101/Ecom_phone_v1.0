@@ -31,7 +31,7 @@
     <link href="css/style.css" rel="stylesheet">
 
     {{-- Title icon --}}
-    <link rel="icon" type="image/png" href="{{asset("img/title.svg")}}"/>
+    <link rel="icon" type="image/png" href="{{asset('img/title.svg')}}"/>
 
 </head>
 

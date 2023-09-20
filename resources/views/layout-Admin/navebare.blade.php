@@ -19,7 +19,7 @@
                     <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
                         <a href="#" class="dropdown-item">
                             <div class="d-flex align-items-center">
-                                <img class="rounded-circle" src="{{asset("img/user.jpg")}}" alt="" style="width: 40px; height: 40px;">
+                                <img class="rounded-circle" src="{{asset('img/user.jpg')}}" alt="" style="width: 40px; height: 40px;">
                                 <div class="ms-2">
                                     <h6 class="fw-normal mb-0">Jhon send you a message</h6>
                                     <small>15 minutes ago</small>
@@ -29,7 +29,7 @@
                         <hr class="dropdown-divider">
                         <a href="#" class="dropdown-item">
                             <div class="d-flex align-items-center">
-                                <img class="rounded-circle" src="{{asset("img/user.jpg")}}" alt="" style="width: 40px; height: 40px;">
+                                <img class="rounded-circle" src="{{asset('img/user.jpg')}}" alt="" style="width: 40px; height: 40px;">
                                 <div class="ms-2">
                                     <h6 class="fw-normal mb-0">Jhon send you a message</h6>
                                     <small>15 minutes ago</small>
@@ -39,7 +39,7 @@
                         <hr class="dropdown-divider">
                         <a href="#" class="dropdown-item">
                             <div class="d-flex align-items-center">
-                                <img class="rounded-circle" src="{{asset("img/user.jpg")}}" alt="" style="width: 40px; height: 40px;">
+                                <img class="rounded-circle" src="{{asset('img/user.jpg')}}" alt="" style="width: 40px; height: 40px;">
                                 <div class="ms-2">
                                     <h6 class="fw-normal mb-0">Jhon send you a message</h6>
                                     <small>15 minutes ago</small>
@@ -76,12 +76,17 @@
                 </div>
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
-                        <img class="rounded-circle me-lg-2" src="{{Auth::user()->avatar}}" alt="" style="width: 40px; height: 40px;">
-                        <span class="d-none d-lg-inline-flex">John Doe</span>
+                        @if(Auth::user()->avatar)
+                            <img class="rounded-circle me-lg-2" src="{{Storage::url(Auth::user()->avatar)}}" alt="" style="width: 40px; height: 40px;">
+                            <span class="d-none d-lg-inline-flex">John Doe</span>
+                        @else
+                            <img class="rounded-circle me-lg-2" src="{{asset('img/OIP.png')}}" alt="" style="width: 40px; height: 40px;">
+                            <span class="d-none d-lg-inline-flex">John Doe</span>
+                        @endif
                     </a>
                     <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
                         <a href="#" class="dropdown-item link-info link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">{{Auth::user()->email}}</a>
-                        <a href="#" class="dropdown-item">My Profile</a>
+                        <a href="{{route(Auth::user()->role.'.profile')}}" class="dropdown-item">My Profile</a>
                         <a href="#" class="dropdown-item">Settings</a>
                         <a class="dropdown-item" href="{{ route('logout') }}"
                             onclick="event.preventDefault();

@@ -65,8 +65,12 @@
                         <a href="#testimonial" class="nav-item nav-link">Testimonial</a>
                         <a href="#contact" class="nav-item nav-link">Contact</a>
                     </div>
-                    <a href="{{route('login')}}" class="btn btn-light rounded-pill py-2 px-4 ms-3 d-none d-lg-block">Login</a>
-                    <a href="{{route('register')}}" class="btn btn-light rounded-pill py-2 px-4 ms-3 d-none d-lg-block">Register</a>
+                    @if(Auth::check())
+                        <a href="{{url('/'.Auth::user()->role.'/dashbord')}}" title="Go To your Dadhbord" class="btn btn-light rounded-pill py-2 px-4 ms-3 d-none d-lg-block">Home</a>
+                    @else
+                        <a href="{{route('login')}}" class="btn btn-light rounded-pill py-2 px-4 ms-3 d-none d-lg-block">Login</a>
+                        <a href="{{route('register')}}" class="btn btn-light rounded-pill py-2 px-4 ms-3 d-none d-lg-block">Register</a>
+                    @endif
                 </div>
             </nav>
 

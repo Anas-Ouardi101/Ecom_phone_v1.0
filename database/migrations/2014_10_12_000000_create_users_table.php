@@ -14,12 +14,19 @@ return new class extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string("avatar")->default("https://th.bing.com/th/id/OIP.VhrISPT4Ik-EP_UFFIznNwHaHa?pid=ImgDet&rs=1");
+            $table->string("avatar")->nullable();
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->string("status")->default("active");
             $table->string("role")->default("client");
+            $table->string('phone')->nullable();
+            $table->string("adriss")->default("test");
+            $table->string("city")->default("test");
+            $table->string("contry")->default("test");
+            $table->string("pinecode")->default("test");
+            
+            $table->string("bithdate")->default("test");
             $table->rememberToken();
             $table->timestamps();
         });

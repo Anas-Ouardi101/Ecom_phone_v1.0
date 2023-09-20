@@ -55,7 +55,9 @@
                                         <b>{{ __('Remember Me') }}</b>
                                     </label>
                                 </div>
-                                
+                                <!--begin::Link-->
+								    <a href="{{ route('password.request') }}" class="link-primary fs-6 fw-bolder">Forgot Password ?</a>
+                                <!--end::Link-->
                             </div>
                         
                         <button type="submit" class="btn btn-primary py-3 w-100 mb-4">Sign In</button>
